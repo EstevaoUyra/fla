@@ -1,0 +1,33 @@
+Notas questões
+
+Questões com múltiplas escolhas possíveis costumam seguir o seguinte padrão:
+
+PERGUNTA:
+a) alternativa positiva: +1 
+b) alternativa positiva: +1 
+c) alternativa positiva: +1 
+d) alternativa positiva: +1 
+e) outras opções: +1 OU 0
+f) negativa: false
+
+"outras opções" indica que a empresa aplica outras opções ALÉM ou EM VEZ DE as anteriores;
+
+> em alguns casos, há uma caixa de texto subsequente pra empresa especificar essas 'outras' coisas
+>> o campo "outros" = o índice da coluna relevante pra avaliar no fields.csv
+>> resposta dá 0
+
+> em outros não há campo
+>> o campo "outros" = 'false'
+>> a resposta dá +1
+
+
+"negativa" indica que a empresa não faz nenhuma das coisas da pergunta
+
+> detecto essa resposta caso sua 'pontuação' seja a str 'negativa'
+> CHECAR CONSISTÊNCIA: pode ser que empresas tenham escolhido uma opção E a negativa: o que fazer caso isso ocorra?
+
+---------------------------
+tem duas negativas, checar consistência:
+8, 12, 20, 28, 32
+
+28: "meio ponto"

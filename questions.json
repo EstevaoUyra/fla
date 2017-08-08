@@ -1,0 +1,563 @@
+[{
+		"cat": "1. Estratégias para identificar barreiras à equidade de gênero (internas e externas)",
+		"n": "1",
+		"question": "Em termos gerais, a empresa identifica e busca eliminar possíveis barreiras à promoção da equidade de gênero? Se sim, por meio de quais das estratégias abaixo?",
+		"outros": false,
+		"answers": {
+			"Sim, a empresa identifica e busca eliminar possíveis barreiras à promoção da equidade de gênero": 1,
+			"Sim, e a empresa detectou o tema a partir de um estudo de materialidade e elaborou suas políticas ou práticas gerais de promoção da equidade de gênero ou está projetando como endereçar a questão a partir dele": 1,
+			"Sim, e a empresa realiza censo ou monitoramento de diversidade de gênero no quadro de funcionários": 1,
+			"Sim, e a empresa realiza pesquisas internas de percepção de seus/suas funcionários/as para se avaliar com relação à equidade de gênero": 1,
+			"Sim, e a empresa realiza auditorias internas do sistema de avaliação e promoção de colaboradores/as, incluindo a avaliação da disparidade de gênero das promoções": 1,
+			"Sim, e a empresa instalou um processo de engajamento com partes interessadas (que abrange um ou vários grupos de partes interessadas) de forma estratégica para diminuir riscos e identificar oportunidades de inovação e melhoria na questão da equidade de gênero": 1,
+			"Não, a empresa não identifica ou busca eliminar possíveis barreiras à promoção da equidade de gênero": false
+		}
+	},
+	{
+		"cat": "4. Práticas para divulgação do posicionamento da empresa em prol da equidade",
+		"n": "4",
+		"question": "Quais dessas ações e políticas de relacionamento com o público externo a empresa encampa em prol da equidade de gênero?",
+		"outros": false,
+		"answers": {
+			"As lideranças da empresa se posicionam publicamente sobre equidade de gênero e valorização da diversidade": 1,
+			"A empresa investe em projetos sociais relacionados a equidade de gênero": 1,
+			"A empresa participa de comitês externos (grupos que possuem representantes de outras empresas, representantes de ONGs, de movimentos sociais por exemplo) que promovem políticas de equidade de gênero": 1,
+			"A empresa participa de iniciativas do poder público ligadas à promoção da equidade de gênero": 1,
+			"A empresa participa ativamente de fóruns multistakeholders para exercer influência em políticas públicas que promovam a equidade de gênero": 1,
+			"A empresa promove o empreendedorismo feminino, orientando, capacitando ou reconhecendo publicamente empresárias mulheres": 1,
+			"A empresa possui outras políticas de relacionamento com o público externo em prol da equidade de gênero": 1,
+			"A empresa não possui política de relacionamento externo em prol da equidade de gênero": false
+		}
+	},
+	{
+		"cat": "5. Práticas e politicas de representação visual em prol da equidade de gênero",
+		"n": "5",
+		"question": "Sobre suas peças publicitárias",
+		"outros": false,
+		"answers": {
+			"A empresa possui política específica para a representação visual da diversidade e da equidade de gênero em suas peças publicitárias ou política que preveja a divulgação de pautas em prol da equidade de gênero em sua publicidade": 1,
+			"A empresa possui política ou previsão em código de conduta que preveja a proibição da utilização de conteúdo sexista ou contrários aos valores de equidade entre os gêneros em suas peças": 1,
+			"A empresa realiza análise prévia de peças publicitárias para verificar a conformidade com a política da empresa contrária à publicidade de conteúdo sexista ou que afronte valores de equidade entre os gêneros": 1,
+			"A empresa possui uma política genérica sobre a não utilização de propaganda que coloque pessoas em situação preconceituosa ou desrespeitosa": 1,
+			"A empresa possui outras políticas ou práticas relacionadas à propaganda e equidade de gênero": 1,
+			"A empresa não possui política relacionada a propaganda e equidade de gênero": false
+		}
+	},
+	{
+		"cat": "6. Gestão da cadeia de valor em prol da equidade de gênero",
+		"n": "6",
+		"question": "A empresa possui quais destas práticas ou políticas de gestão da cadeia de valor em prol da equidade de gênero?",
+		"outros": false,
+		"answers": {
+			"A empresa estimula seus fornecedores a implementar políticas e práticas de promoção da equidade de gênero e/ou a adotarem práticas inclusivas, além de buscar conscientizar sobre a importância dessas": 1,
+			"A empresa estimula que seus fornecedores também gerenciem suas cadeias de suprimentos no que diz respeito ao tema da equidade de gênero": 1,
+			"A empresa sensibiliza e capacita seus gestores de compras para que compreendam e incorporem questões de gênero em suas decisões e avaliações": 1,
+			"A empresa tem política de rescisão de vínculo com parceiros que cometem violações à equidade de gênero ou direitos básicos das mulheres durante a prestação do serviço": 1,
+			"A empresa possui outras políticas de gestão de cadeia de valor em prol da equidade de gênero": 1,
+			"A empresa não possui política de gestão de cadeia de valor em prol da equidade de gênero": false
+		}
+	},
+	{
+		"cat": "7. Grau de engajamento de partes interessadas para criação da estratégia pró equidade de gênero",
+		"n": "7",
+		"question": "A empresa usa o método de engajamento de partes interessadas (stakeholders) de forma estratégica para diminuir riscos e identificar oportunidades de inovação e melhoria na questão da equidade de gênero?",
+		"outros": false,
+		"answers": {
+			"Sim, a empresa instalou um processo de engajamento com partes interessadas (stakeholders) de forma estratégica para diminuir riscos e identificar oportunidades de inovação e melhoria na questão da equidade de gênero": 1,
+			"Sim, e esse processo de engajamento é monitorado por indicadores-chave de desempenho (KPIs), incluindo seu desempenho quanto à equidade de gênero": 1,
+			"Sim, e os resultados do engajamento são analisados de forma sistemática, interpretados e relatados à alta administração": 1,
+			"Sim e a empresa busca influenciar e inspira partes interessadas (seus stakeholders) para a não discriminação, inserção e ascensão de mulheres em seus quadros": 1,
+			"Não, a empresa não possui este tipo de engajamento, ao menos não com o objetivo de formular uma estratégia pró equidade de gênero": false
+		}
+	},
+	{
+		"cat": "8. Comitê de equidade de gênero",
+		"n": "8",
+		"question": "A empresa possui área ou instância (como um comitê, por exemplo) responsável por garantir a implementação de ações de promoção da equidade de gênero?",
+		"outros": false,
+		"answers": {
+			"Sim, a empresa possui": 1,
+			"Sim, trata-se do comitê de diversidade": 1,
+			"Sim e essa área ou instância é liderada por mulheres": 1,
+			"Sim e a empresa possui orçamento próprio para essa instância": 1,
+			"Não, mas a empresa garante um orçamento mínimo para seus programas de equidade de gênero": 1,
+			"Não, a empresa trata das questões atinentes a equidade de gênero à medida que surgem necessidades": false
+		}
+	},
+	{
+		"cat": "9. Monitoramento do ambiente laboral e canais de interlocução",
+		"n": "9",
+		"question": "Como a empresa realiza o monitoramento do ambiente laboral para elaborar sua estratégia de aculturamento em prol da equidade de gênero na empresa?",
+		"outros": false,
+		"answers": {
+			"A empresa realiza censos para levantamento de dados acerca do público interno considerando questões atinentes à equidade de gênero e demandas específicas advindas dos gêneros": 1,
+			"A empresa realiza pesquisas visando medir o nível de satisfação dos/as colaboradores/as quanto ao relacionamento com seus superiores e tratamento provido pelos colegas de trabalho": 1,
+			"A empresa realiza pesquisas de clima, tendo como um de seus objetivos monitorar a equidade de gênero dentro do ambiente de trabalho": 1,
+			"A empresa possui monitoramento de garantia de igualdade de oportunidades que acompanha o percurso de ascensão das colaboradoras mulheres desde sua entrada até cargos de liderança": 1,
+			"A empresa possui outros processos de monitoramento do ambiente laboral em prol da equidade de gênero": 1,
+			"A empresa ainda não tem um processo de monitoramento em prol da equidade de gênero": false
+		}
+	},
+	{
+		"cat": "10. Agenda e dinâmica da alta liderança e a equidade de gênero",
+		"n": "10",
+		"question": "A promoção da equidade de gênero é tema presente na agenda e dinâmica da alta liderança da empresa? Como isso se manifesta?",
+		"outros": 30,
+		"answers": {
+			"A empresa insere este tema na agenda/pauta da alta liderança da empresa": 1,
+			"A empresa identifica lideranças formais para a promoção da equidade de gênero": 1,
+			"São levados à alta liderança os resultados de processo formal de autoavaliação que inclui questões relacionadas à equidade de gênero": 1,
+			"A empresa inclui na avaliação de executivos seu desempenho nos KPIs relacionados a questões de gênero": 1,
+			"A empresa possui treinamento obrigatório de diversidade para a liderança": 1,
+			"A empresa possui treinamento facultativo de diversidade para a liderança": 1,
+			"A empresa possui programa obrigatório de treinamento específico sobre bias (vieses) e preconceitos de gênero para a liderança": 1,
+			"A empresa possui programa facultativo de treinamento específico sobre bias (viéses) e preconceitos de gênero para a liderança": 1,
+			"A empresa avalia periodicamente seus processos de governança, ajustando-os de acordo com as análises relacionadas aos impactos na equidade de gênero": 1,
+			"A empresa possui outras políticas neste sentido.": 0,
+			"A promoção da equidade de gênero não é tema da agenda e dinâmica da alta liderança da empresa": false
+		}
+	},
+	{
+		"cat": "11. Identificação do estágio de maturação que o aculturamento sobre o tema do preconceito e discriminação contra a mulher atingiu na empresa",
+		"n": "11",
+		"question": "Quais destas práticas ou políticas a empresa possui para combater a cultura do preconceito contra a mulher e subestimação de sua capacidade?",
+		"outros": false,
+		"answers": {
+			"A empresa possui política ou menção em código de conduta ou documento equivalente que proíba o constrangimento ou discriminação de colaboradores/as em razão do seu gênero": 1,
+			"A empresa realiza campanhas internas de conscientização (seminários e fóruns, entre outros) para aumentar a compreensão de seus/suas colaboradores/as sobre a importância de valorização da mulher": 1,
+			"A empresa usa as informações de seu censo interno para subsidiar o planejamento de ações afirmativas com foco na valorização das colaboradoras mulheres": 1,
+			"A empresa estimula a criação de grupos de afinidade internos para reduzir preconceitos, desconstruir estereótipos e combater a discriminação com base em gênero": 1,
+			"A empresa possui programa de conscientização todos os seus níveis hierárquicos a fim de envolvê-los e gerar compreensão e comprometimento em relação a equidade de gênero e diversidade": 1,
+			"A empresa possui treinamento obrigatório de diversidade": 1,
+			"A empresa possui treinamento facultativo de diversidade": 1,
+			"A empresa possui programa de treinamento obrigatório sobre bias (viéses) e preconceitos de gênero": 1,
+			"A empresa possui programa de treinamento facultativo sobre bias (viéses) e preconceitos de gênero": 1,
+			"A empresa possui outras políticas ou práticas para combater a cultura do preconceito contra a mulher e a subestimação de sua capacidade": 1,
+			"A empresa não tem políticas ou práticas e trata das questões atinentes ao tema à medida que surgem necessidades": false
+		}
+	},
+	{
+		"cat": "12. Equidade de gênero na estratégia da empresa",
+		"n": "12",
+		"question": "Sobre políticas internas de equidade de gênero e inserção destas na formulação da estratégia da empresa:",
+		"outros": false,
+		"answers": {
+			"A empresa possui um plano de sucessão estratégico que leva em consideração princípios de tratamento isonômico entre os gêneros e atingimento da equidade de gênero": 1,
+			"A empresa tem procedimentos de avaliação de gestão de oportunidades relacionados a seus impactos nas questões de gênero": 1,
+			"A empresa tem procedimentos de remuneração variável relacionados a seus impactos nas questões de gênero": 1,
+			"A empresa inclui nas decisões estratégicas de compra, investimento ou financiamento a variável cumprimento dos direitos das mulheres ou equidade de gênero da empresa que será contratada ou objeto de investimento": 1,
+			"A empresa busca incluir as políticas internas de equidade de gênero de outra(s) maneira(s) na formulação da estratégia da empresa": 1,
+			"A empresa busca incluir a equidade de gênero de outra(s) maneira(s) na formulação da estratégia da empresa": 1,
+			"A empresa não crê que a questão da equidade de gênero tenha que ser tratada no âmbito estratégico, mas sim pela diretoria de recursos humanos": false,
+			"A empresa não busca incluir a equidade de gênero na formulação da estratégia da empresa por outros motivos": false
+		}
+	},
+	{
+		"cat": "13. Uso de apresentação da vaga para recrutar mulheres",
+		"n": "13",
+		"question": "A empresa adota quais das seguintes políticas de equidade de gênero em relação ao recrutamento de pessoas?",
+		"outros": 34,
+		"answers": {
+			"A empresa descreve as habilidades e competências requeridas para a vaga de forma neutra sem associá-las a um gênero e sem reforçar estereótipos de gênero associados a habilidades, cargos e profissões": 1,
+			"A divulgação de vagas de trabalho prevê e informa sobre sistema prévio de avaliação cega de currículos": 1,
+			"A empresa utiliza linguagem inclusiva quando anuncia suas vagas": 1,
+			"A empresa deixa claro seu compromisso com a equidade de gênero quando da divulgação da vaga": 1,
+			"A empresa, em seu anúncio, divulga a existência de ações afirmativas para mulheres na seleção de candidatos/as para a vaga": 1,
+			"A empresa busca diversificar as formas de anunciar as vagas, buscando atingir o público de mulheres": 1,
+			"A empresa adota outras políticas de equidade de gênero em relação ao recrutamento de pessoas.": 0,
+			"A empresa não adota políticas de equidade de gênero em relação ao recrutamento de pessoas": false
+		}
+	},
+	{
+		"cat": "14. Meios de controle de equidade de gênero no processo de recrutamento",
+		"n": "14",
+		"question": "A empresa adota quais das seguintes políticas de equidade de gênero em relação à seleção de pessoas para um cargo?",
+		"outros": false,
+		"answers": {
+			"O processo de seleção de pessoas realizado pela empresa possui meios para garantir a transparência em relação aos critérios utilizados": 1,
+			"As decisões tomadas quando do processo de seleção de pessoas são justificadas formalmente ou documentadas": 1,
+			"A empresa monitora a proporção de homens e mulheres que são contratados": 1,
+			"A empresa proíbe expressamente, em sua política de promoção da equidade de gênero, a não-contratação de mulheres baseada em seu estado civil ou condição reprodutiva": 1,
+			"A empresa possui ação afirmativa com percentual mínimo determinado para contratação de mulheres": 1,
+			"A empresa possui outra(s) política(s) específica(s) de equidade de gênero em relação à seleção de pessoas a um cargo": 1,
+			"A empresa não possui política específica de equidade de gênero em relação à seleção de pessoas a um cargo": false
+
+		}
+	},
+	{
+		"cat": "15. Processos para capacitação, tipos de capacitação e retenção de talentos femininos",
+		"n": "15",
+		"question": "Quais dessas políticas ou processos para capacitação e treinamento a empresa possui?",
+		"outros": false,
+		"answers": {
+			"A empresa explicita a equidade de condições entre mulheres e homens no que diz respeito a acesso a treinamentos e bolsas (em sua política de promoção da equidade de gênero ou outro meio)": 1,
+			"A empresa estimula a participação de colaboradoras em programas de capacitação e treinamento": 1,
+			"A empresa possui programa de capacitação específico para mulheres elaborado a partir de pesquisa/censo sobre as necessidades de desenvolvimento": 1,
+			"A empresa oferece treinamentos às colaboradoras que estimulam o desenvolvimento profissional, além das atividades que elas exercem naquele momento": 1,
+			"A empresa realiza programas de capacitação profissional que visem melhorar a qualificação de mulheres para assumir postos não tradicionalmente ocupados por mulheres": 1,
+			"A empresa oferece um programa ou espaço ou incentivo para momentos de compartilhamento de experiências entre suas lideranças femininas e as colaboradoras mais jovens": 1,
+			"A empresa documenta e avalia as melhorias no trabalho alcançadas por meio de seus programas de capacitação": 1,
+			"A empresa possui outra(s) política(s) ou processo(s) de captação e treinamento direcionada(s) por gênero": 1,
+			"A empresa não possui política de captação e treinamento direcionada por gênero": false
+		}
+	},
+	{
+		"cat": "17. Práticas ou políticas que promovem a ascensão de mulheres",
+		"n": "17",
+		"question": "Quais dessas políticas gerais ou ações de estímulo à promoção de mulheres a empresa possui?",
+		"outros": 41,
+		"answers": {
+			"A empresa divulga amplamente e em variados meios de comunicação interna suas ações de estímulo à promoção de mulheres, de modo que todas colaboradoras possam ter acesso a elas": 1,
+			"A empresa monitora se suas funcionárias mulheres estão tendo acesso ou sendo cotadas para os tarefas ou atribuições que geram visibilidade (tidos por hot jobs que propulsionam carreiras)": 1,
+			"A empresa monitora a promoção de colaboradores/as para verificar possíveis problemas e barreiras quanto à ascensão de mulheres em seu quadro hierárquico": 1,
+			"Os/as profissionais da empresa responsáveis pela promoção de colaboradores/as são treinados em temas de equidade de gênero": 1,
+			"A empresa se assegura de que tanto homens quanto mulheres sejam considerados/as no planejamento sucessório para cada papel-chave do processo decisório ou para as lideranças das equipes": 1,
+			"A empresa possui programa de identificação de lideranças femininas ou a empresa possui prêmio para lideranças femininas que se destacaram no ano ou iniciativa similar": 1,
+			"A empresa possui metas para reduzir a diferença na proporção entre cargos ocupados por homens e mulheres em seus cargos de gerência e executivos": 1,
+			"A empresa possui outras políticas desse tipo": 0,
+			"A empresa não possui política específicas para ascensão de mulheres": false
+		}
+	},
+	{
+		"cat": "18. Métricas de ascensão de mulheres",
+		"n": "18",
+		"question": "Quais destas métricas ou monitoramentos relativos à ascensão de mulheres a empresa possui?",
+		"outros": 43,
+		"answers": {
+			"Monitoramento do percurso de carreira das mulheres ao longo do tempo": 1,
+			"Monitoramento dos números relativos ao retorno de mulheres após o cumprimento da licença-maternidade/licença-adoção": 1,
+			"Métricas para aferir ascensão financeira de colaboradoras": 1,
+			"Métricas para correlacionar seus índices de performance e a presença de mulheres": 1,
+			"Outras": 0,
+			"A empresa não possui métricas ou monitoramento de ascensão de mulheres": false
+		}
+	},
+	{
+		"cat": "19. Práticas ou políticas específicas de capacitação de mulheres para liderança",
+		"n": "19",
+		"question": "A empresa possui quais das seguintes ações relativas a programas de incentivo à liderança feminina?",
+		"outros": 45,
+		"answers": {
+			"A empresa possui práticas não formalizadas de incentivo à liderança feminina": 1,
+			"A empresa oferece programa/ações de incentivo à liderança feminina apenas a cargos específicos ou à potenciais lideranças femininas que tenham sido identificadas": 1,
+			"A empresa oferece programa/ações de incentivo à liderança feminina à todas as suas colaboradoras": 1,
+			"A empresa promove ações de intercâmbio de experiências entre mulheres em altos cargos de liderança e outras em posições hierarquicamente menos elevadas, com o objetivo de expor as atitudes, competências e habilidades que as líderes desenvolveram para ascender": 1,
+			"A empresa promove networking entre as colaboradoras da empresa": 1,
+			"As redes de networking feminino da empresa são formalmente estabelecidas": 1,
+			"A empresa oferece treinamento de desenvolvimento de habilidades de liderança específico para mulheres": 1,
+			"As práticas ou o programa de incentivo à liderança feminina são explicitamente alinhados ao planejamento de sucessão da empresa": 1,
+			"A empresa possui outras ações nesse sentido": 0,
+			"A empresa não desenvolve ações relativas a programas de incentivo à liderança feminina.": false
+		}
+	},
+	{
+		"cat": "20. Programa de coaching",
+		"n": "20",
+		"question": "A empresa possui quais das seguintes políticas ou ações relacionadas a programas de coaching?",
+		"outros": false,
+		"answers": {
+			"A empresa possui programa de coaching": 1,
+			"A empresa oferece o programa de coaching apenas a cargos específicos": 1,
+			"O programa de coaching é pensado tendo em vista gaps de habilidades e necessidades de crescimento profissional dos/as colaboradores/as": 1,
+			"O coaching está formalmente ligado ao plano de desenvolvimento de carreira dos/as treinados/as (coachees)": 1,
+			"Os coaches do programa são pessoas externas à empresa (external coaching)": 1,
+			"Os coaches do programa são colaboradores/as da empresa (internal coaching)": 1,
+			"A empresa incentiva a participação de mulheres no programa de coaching": 1,
+			"A empresa possui programa de coaching específico para mulheres": 1,
+			"A empresa não possui programa de coaching": false,
+			"A empresa não possui programa de coaching especifico para mulheres": false
+		}
+	},
+	{
+		"cat": "21. Monitoramento de resultados do programa de coaching",
+		"n": "21",
+		"question": "A empresa possui quais destas práticas relativas ao monitoramento e accountability de programas de coaching?",
+		"outros": false,
+		"answers": {
+			"A empresa possui programa de coaching, mas não realiza monitoramento sobre sua efetividade": 0,
+			"A empresa possui processos formais de monitoramento do coaching": 1,
+			"A empresa monitora a qualidade do relacionamento entre o/a coach e os/as treinados (coachees)": 1,
+			"A empresa possui processos de obtenção de feedback sobre os programas de coaching por meio de múltiplas fontes e métricas": 1,
+			"A empresa possui monitoramento para avaliar a retenção dos envolvidos, bem como se os/as colaboradores/as envolvidos/as em programas de coaching estão alcançando seus objetivos na carreira": 1,
+			"A empresa monitora se mulheres estão tendo acesso aos programas de coaching": 1,
+			"A empresa monitora se mulheres estão conseguindo promoções e desenvolvendo suas carreiras após programas de coaching": 1,
+			"A empresa estabelece objetivos formais e os comunica para o programa de coaching": 1,
+			"A empresa se assegura de que eventuais relatos com resultados dos programas de coaching sejam divulgados e discutidos entre colaboradores/as de todos os níveis, inclusive por líderes sêniores": 1,
+			"A empresa possui um cargo responsável pelos mecanismos de accountability dos programas de coaching ou possui responsáveis formais pelo programa": 1,
+			"Não aplicável (A empresa não possui programas de coaching)": false
+		}
+	},
+	{
+		"cat": "22. Programas de mentoring",
+		"n": "22",
+		"question": "A empresa possui quais das seguintes políticas relacionadas a programas de mentoring?",
+		"outros": 49,
+		"answers": {
+			"A empresa incentiva informalmente o relacionamento de mentoring entre seus/suas colaboradores/as": 1,
+			"A empresa possui programa formalizado de mentoring": 1,
+			"A empresa oferece o programa de mentoring apenas a cargos específicos": 1,
+			"A empresa se assegura de que a nomeação dos mentores é diretamente ligada às necessidades de desenvolvimento de habilidades dos/das mentees": 1,
+			"O mentoring está formalmente ligado ao plano de desenvolvimento de carreira dos/das mentees": 1,
+			"A empresa possui programa de mentoring virtual": 1,
+			"A empresa possui programa de peer-to-peer mentoring (entre pessoas do mesmo nível hierárquico)": 1,
+			"A empresa possui programa de mentoring específico para mulheres": 1,
+			"A empresa possui treinamento relacionado ao mentoring": 1,
+			"A empresa possui outras políticas relativas ao programa de mentoring": 0,
+			"A empresa não possui programa de mentoring": false
+		}
+	},
+	{
+		"cat": "23. Programas de sponsorship",
+		"n": "23",
+		"question": "A empresa possui quais das seguintes políticas ou práticas relacionadas a programas de sponsorship?",
+		"outros": 51,
+		"answers": {
+			"A empresa possui programa formalizado de sponsorship": 1,
+			"O programa de sponsorship é oferecido a cada ponto de transição de carreira dos/as colaboradores/as": 1,
+			"A empresa incentiva a participação de mulheres no programa de sponsorship": 1,
+			"A empresa determina que mulheres sêniores ingressem como mentoras no programa de sponsorship": 1,
+			"A empresa possui programa de sponsorship específico para mulheres": 1,
+			"A empresa possui treinamento específico para os/as sponsors participantes do programa relativo a temas de equidade de gênero": 1,
+			"A empresa promove o networking e a apresentação de mulheres de níveis hierárquicos menos elevados a líderes seniores da empresa por meio de encontros periódicos para que o sponsorship informal se estabeleça naturalmente": 1,
+			"O programa de sponsorship fornece feedback aos/às sponsoreds acerca de suas qualidades e necessidades de desenvolvimento pessoal em habilidades de liderança": 1,
+			"A empresa possui outras políticas relativas ao programa de sponsorship": 0,
+			"A empresa não possui programa formal de sponsorship": false
+		}
+	},
+	{
+		"cat": "24. Avaliação de desempenho das colaboradoras",
+		"n": "24",
+		"question": "Como a empresa avalia o desempenho de suas colaboradoras?",
+		"outros": false,
+		"answers": {
+			"A empresa realiza a avaliação de desempenho de maneira sistemática, pelo menos uma vez ao ano": 1,
+			"A empresa realiza a avaliação de desempenho estabelecida formalmente e que utiliza os mesmos critérios e métodos de atribuição de valor tanto para homens como para mulheres": 1,
+			"A empresa realiza a avaliação de desempenho estabelecida formalmente mas utiliza critérios e métodos de atribuição de valor que levam em consideração diferenças biológicas entre homens e mulheres": 1,
+			"A empresa realiza a avaliação de desempenho por meio de critérios estabelecidos caso a caso pelo/a avaliador/a": 1,
+			"A empresa disponibiliza os resultados da avaliação de desempenho individualmente a cada avaliado": 1,
+			"A empresa condiciona a remuneração variável de alguns colaboradores/as à avaliação de desempenho": 1,
+			"A empresa condiciona a promoção de colaboradores/as à resultados da avaliação de desempenho": 1,
+			"A empresa realiza avaliação de desempenho 360°": 1,
+			"A empresa realiza de outra forma a avaliação de desempenho de seus colaboradores": 1,
+			"A empresa não realiza avaliação de desempenho de seus/suas colaboradores/as": false
+		}
+
+	},
+	{
+		"cat": "25. Monitoramento de resultados das avaliações de desempenho em prol da equidade de gênero",
+		"n": "25",
+		"question": "A empresa possui alguma das práticas abaixo relacionadas à avaliação de desempenho?",
+		"outros": false,
+		"answers": {
+			"A empresa monitora os resultados da avaliação de desempenho em relação ao gênero dos/das avaliados/as": 1,
+			"A empresa realiza a avaliação de mulheres que tenham tirado licença maternidade com base na replicação dos resultados do ano anterior ou fazendo avaliação proporcional": 1,
+			"A empresa possui procedimentos formais e claros de aumento salarial atrelados aos índices de desempenho": 1,
+			"A empresa realiza avaliação de desempenho para colaboradores/as que trabalham em meio período separadamente da avaliação feita para colaboradores/as que trabalham em período integral, por critérios específicos e adequados, com o objetivo de observar mais precisamente sua contribuição e seu valor à organização": 1,
+			"As pessoas responsáveis pela avaliação de desempenho recebem treinamento específico sobre bias (viéses), estereótipos e preconceitos de gênero no ambiente de trabalho": 1,
+			"A empresa possui outro(s) tipo(s) de monitoramento de resultados das avaliações de desempenho em prol da equidade de gênero": 1,
+			"A empresa não possui monitoramento de resultados das avaliações de desempenho em prol da equidade de gênero": false
+		}
+	},
+	{
+		"cat": "26. Monitoramento do índice de turnover de mulheres que ocupam gerência intermediária",
+		"n": "26",
+		"question": "A empresa monitora e avalia o índice de demissões voluntárias de colaboradoras mulheres que ocupam cargos de gerência intermediária ou equivalente ou estejam prestes a ocupá-lo?",
+		"outros": false,
+		"answers": {
+			"Sim": 1,
+			"Não": false
+		}
+	},
+	{
+		"cat": "27. Motivação do índice de turnover de mulheres que ocupam gerência intermediária",
+		"n": "27",
+		"question": "A empresa tem processos para detectar os motivos de eventuais altos índices de turnover de mulheres nesse nível hierárquico?",
+		"outros": false,
+		"answers": {
+			"Sim": 1,
+			"Não": false
+		}
+	},
+	{
+		"cat": "28. Políticas ou práticas específicas para ascensão de mulheres à diretoria",
+		"n": "28",
+		"question": "Quais das seguintes políticas ou ações a empresa possui em relação à ascensão de mulheres a cargos de diretoria (ou vice-presidências)?",
+		"outros": false,
+		"answers": {
+			"Equidade de gênero é um critério no processo de nomeação de diretores (ou VP’s)": 1,
+			"A empresa possui meta ou cota que visa a equilibrar o número de homens e mulheres em suas diretorias (ou vice-presidências)": 1,
+			"A empresa não possui cotas nem pretensões de pleno equilíbrio numérico no curto e médio prazos, mas possui metas de ascensão de mulheres aos cargos de diretoria (ou VP’s)": 1,
+			"A empresa não possui tais políticas, por acreditar que ações afirmativas não têm base meritocrática": false,
+			"A empresa não possui tais políticas por outros motivos": false
+		}
+	},
+	{
+		"cat": "29. Políticas ou práticas específicas para nomeação de mulheres em conselhos de administração",
+		"n": "29",
+		"question": "Quais das seguintes políticas e ações a empresa possui em relação à participação de mulheres em conselhos de administração?",
+		"outros": false,
+		"answers": {
+			"O regimento do conselho de administração inclui princípios e orientações vinculados à promoção da equidade de gênero dentro do próprio conselho": 1,
+			"Equidade de gênero é um critério no processo de nomeação do conselho de administração": 1,
+			"A empresa possui meta ou cota de percentual mínimo que visa equilibrar o número de homens e mulheres em seu conselho de administração": 1,
+			"A empresa não possui tais políticas, por acreditar que ações afirmativas não têm base meritocrática": false,
+			"A empresa não possui tais políticas por outros motivos": false
+		}
+	},
+	{
+		"cat": "30. Práticas ou políticas gerais para equidade de gênero na remuneração",
+		"n": "30",
+		"question": "A empresa apresenta quais das políticas de equidade de gênero na remuneração abaixo?",
+		"outros": false,
+		"answers": {
+			"A empresa monitora satisfação salarial na empresa e relaciona estes índices com o gênero dos/as monitorados/as": 1,
+			"A empresa divulga amplamente e em variados meios de comunicação interna sua política salarial (dá publicidade aos valores de remunerações fixas e variáveis), de modo que todos/as colaboradores/as possam ter acesso a elas": 1,
+			"A empresa possui procedimentos formais e claros de aumento salarial": 1,
+			"A empresa possui métricas de monitoramento de equiparação salarial entre homens e mulheres": 1,
+			"A empresa possui comitê que analisa a remuneração variável dos/as colaboradores/as e investiga eventuais discrepâncias": 1,
+			"A empresa tem metas para diminuir a variação proporcional entre o maior e o menor salário": 1,
+			"A empresa possui outra(s) política(s) de equidade de gênero na remuneração": 1,
+			"A empresa não possui política de equidade de gênero na remuneração": false
+		}
+	},
+	{
+		"cat": "31. Inclusão de mulheres em postos usualmente ocupados por homens",
+		"n": "31",
+		"question": "Há alguma política específica ou ação de estímulo à promoção de mulheres a cargos que são normalmente pouco ocupados por mulheres na empresa?",
+		"outros": false,
+		"answers": {
+			"Sim": 1,
+			"Não": false
+		}
+	},
+	{
+		"cat": "32. Políticas demissionais para monitoramento dos desligamentos de mulheres",
+		"n": "32",
+		"question": "A empresa possui quais destas políticas em relação à demissão de colaboradoras?",
+		"outros": false,
+		"answers": {
+			"A empresa realiza entrevistas de desligamento com colaboradores/as que deixaram a empresa para saber quais foram os motivos desta decisão": 1,
+			"A empresa possui registro das justificativas dos desligamentos voluntários ou involuntários": 1,
+			"Os registros das justificativas dos desligamentos são analisadas por gênero": 1,
+			"A empresa utiliza avaliações baseadas em competências técnicas para tomada de decisão sobre demissões": 1,
+			"A empresa dá acesso ao/à colaborador/a a informações que balizaram o processo demissional involuntário, como forma de propiciar o desenvolvimento profissional da pessoa demitida": 1,
+			"A empresa monitora os índices de demissão em relação ao gênero dos/as colaboradores/as": 1,
+			"A empresa não monitora desligamentos com direcionamento específico para questões de gênero": false,
+			"A empresa não monitora desligamentos": false
+		}
+	},
+	{
+		"cat": "34. Jornada de trabalho e o respeito à vida privada das colaboradoras",
+		"n": "34",
+		"question": "A empresa adota quais das seguintes medidas de conciliação entre trabalho, família e vida pessoal quanto à jornada de trabalho de seus/as colaboradores/as?",
+		"outros": false,
+		"answers": {
+			"A empresa possui políticas estabelecidas e divulgadas para a realização de horas extras": 1,
+			"A empresa compensa as horas extras de todos/as os/as colaboradores/as, incluindo gerentes e executivos/as, de forma regular e registrada (banco de horas)": 1,
+			"A empresa realiza o pagamento de todas as horas extras mas não as evita": 1,
+			"A empresa comunica a necessidade de realização de horas extras com antecedência e respeita a disponibilidade de seus/as colaboradores/as": 1,
+			"A empresa evita horas extras, mas não as controla em cargos de gerência intermediária para cima": 1,
+			"A empresa mantém programas de respeito e limites com relação ao trabalho remoto fora do horário de trabalho": 1,
+			"A empresa analisa caso a caso as demandas dos/as colaboradores/as": 1,
+			"A empresa possui outras medidas de conciliação entre trabalho, família e vida pessoal quanto à jornada de trabalho de seus/as colaboradores/as": 1,
+			"A empresa não possui medidas de conciliação entre trabalho, família e vida pessoal quanto à jornada de trabalho de seus/as colaboradores/as": false
+		}
+	},
+	{
+		"cat": "35. Trabalho remoto e o respeito à vida privada",
+		"n": "35",
+		"question": "Quanto às comunicações com os/as colaboradores/as e o método de trabalho remoto:",
+		"outros": false,
+		"answers": {
+			"A empresa realiza comunicações com os/as colaboradores/as fora do horário da jornada de trabalho em função da natureza dos negócios da empresa e isso é compreendido e praticado sem questionamentos": 1,
+			"A empresa realiza comunicações com os/as colaboradores/as fora do horário da jornada de trabalho mas esta prática é mal recebida pelos colaboradores": 1,
+			"A empresa realiza comunicações com os/as colaboradores/as fora do horário da jornada de trabalho com anuência tácita de seus colaboradores, que preferem a flexibilidade do trabalho remoto e compreendem.": 1,
+			"É solicitada autorização para o/a colaborador/a para realizar este tipo de comunicação após o horário de trabalho": 1,
+			"A empresa possui outra política ou prática neste sentido": 1,
+			"A empresa analisa caso a caso, não tem prática sobre o tema": false
+		}
+	},
+	{
+		"cat": "36. Tipos de jornadas ou arranjos contratuais flexíveis de trabalho",
+		"n": "36",
+		"question": "Quais das políticas ou práticas de jornada de trabalho flexível abaixo a empresa adota?",
+		"outros": 76,
+		"answers": {
+			"A empresa adota informalmente práticas de jornada trabalho flexível": 1,
+			"A empresa possui política formal de jornada de trabalho flexível de meio período": 1,
+			"Flextime: permite variação de horário na chegada e na saída do trabalho": 1,
+			"Teletrabalho: trabalho realizado de outro lugar que não as instalações da empresa, normalmente de casa.": 1,
+			"Jornadas com redução de dias/horas: funcionários/as podem trabalhar um número menor de dias por semana, ou um número menor de horas por dia": 1,
+			"Cargo compartilhado: duas pessoas voluntariamente compartilham as responsabilidades de trabalho de um cargo de tempo integral": 1,
+			"Arranjos contratuais sazonais: funcionários/as trabalham em tempo integral ou parcial por menos de seis meses durante o ano": 1,
+			"A empresa possui outras políticas de jornada de trabalho flexível": 0,
+			"A empresa não possui política de trabalho flexível": false
+		}
+	},
+	{
+		"cat": "37. Destinação das jornadas flexíveis de trabalho",
+		"n": "37",
+		"question": "Como e a quem a empresa destina práticas relativas às políticas de jornada de trabalho flexível?",
+		"outros": 78,
+		"answers": {
+			"A empresa concede políticas de jornada de trabalho flexível apenas para mulheres": 1,
+			"A empresa concede políticas de jornada de trabalho flexível apenas para mulheres que voltaram de licença-maternidade": 1,
+			"A empresa oferece políticas de jornada de trabalho flexível apenas para pais/mães que voltaram de licença maternidade/paternidade": 1,
+			"A empresa concede políticas de jornada de trabalho flexível apenas para cargos específicos": 1,
+			"A empresa concede políticas de trabalho flexível para todos seus/suas colaboradores/as, independentemente da comprovação de demandas específicas": 1,
+			"A empresa possui outros critérios para concessão de jornada de trabalho flexível": 1,
+			"A empresa não possui políticas de jornada de trabalho flexível": 1
+		}
+	},
+	{
+		"cat": "39. Monitoramento das práticas de jornada flexível de trabalho",
+		"n": "39",
+		"question": "A empresa possui quais destas práticas relativas ao monitoramento de políticas de trabalho flexível?",
+		"outros": false,
+		"answers": {
+			"A empresa monitora a qualidade do relacionamento de colaboradores/as que utilizam políticas de trabalho flexível com seus/suas superiores imediatos/as": 1,
+			"A empresa monitora, em equipes que possuem colaboradores/as que utilizam políticas de trabalho flexível, questões de comunicação, quantidade de trabalho, distribuição do trabalho, coordenação e comunicação dentre os membros do time": 1,
+			"A empresa possui processos de obtenção de feedback sobre as políticas de trabalho flexível": 1,
+			"A empresa monitora se mulheres que usufruem de políticas de trabalho flexível estão conseguindo promoções e desenvolvendo suas carreiras": 1,
+			"A empresa possui outra prática ou política de monitoramento de políticas de trabalho flexível": 1,
+			"A empresa não possui política de monitoramento de políticas de trabalho flexível": false
+		}
+	},
+	{
+		"cat": "40. Práticas ou políticas relativas a funções de cuidado com a família",
+		"n": "40",
+		"question": "Como a empresa lida com as funções de cuidado de seus/as  colaboradores para com a família, em termos de concessão de benefícios e apoio?",
+		"outros": false,
+		"answers": {
+			"A empresa facilita o acompanhamento da saúde dos filhos de suas colaboradoras/es (consultas médicas)": 1,
+			"A empresa fornece às colaboradoras cheque-mãe (valor extra dado à colaboradora mulher que terá filhos)": 1,
+			"A empresa oferece licença-paternidade, remunerada e/ou compulsória, de período igual ou superior a 20 dias": 1,
+			"A empresa oferece a seus/suas colaboradores/as a licença-adoção": 1,
+			"A empresa tem mecanismos que garantem que a licença parental seja integralmente cumprida por seus/suas colaboradores/as": 1,
+			"A empresa fornece auxílio creche ou a empresa oferece instalações para o cuidado de crianças de 4 meses a 6 anos de idade": 1,
+			"A empresa possui espaço específico para amamentação de filhos de colaboradoras": 1,
+			"A empresa considera demandas dos papéis familiares dos/as colaboradores/as quando agenda viagens e programas de educação e treinamento": 1,
+			"A empresa oferece serviço de transporte de filhos de colaboradores/as da escola até a empresa, ou trajetos similares": 1,
+			"A empresa prevê, em suas políticas de viagem, que os filhos menores de 6 anos acompanhem seus pais (mulheres e homens) nas viagens de trabalho": 1,
+			"A empresa promove campanhas internas de sensibilização sobre a importância da divisão das tarefas domésticas e sobre a paternidade responsável": 1,
+			"A empresa possui outra(s) prática(s) específica(s) sobre o tema": 1,
+			"A empresa analisa caso a caso, não tem prática específica sobre o tema": false
+		}
+	},
+	{
+		"cat": "41. Práticas ou políticas contra discriminação de gênero e assédio contra mulheres",
+		"n": "41",
+		"question": "Quais dessas políticas a empresa adota contra discriminação de gênero, assédio moral ou assédio sexual a colaboradoras?",
+		"outros": 82,
+		"answers": {
+			"A empresa possui canal de relacionamento que possibilita a realização de denúncias e reclamações, como ouvidoria (preferencialmente com a proteção do anonimato)": 1,
+			"A empresa possui um processo de acompanhamento ou sindicância, acompanhada de mecanismo de feedback, para as reclamações ou denúncias veiculadas pelo canal de ouvidoria ou relacionamento": 1,
+			"A empresa garante sigilo e que não haverá represálias àqueles que apresentarem reclamações ou denúncias veiculadas pelo canal de relacionamento ou órgão específico para avaliar denúncias sobre discriminação de gênero e/ou assédio sexual": 1,
+			"A empresa aborda em seus treinamentos quais tipos de condutas podem ser consideradas assédio moral e sexual, bem como discriminação de gênero, exemplificando-as": 1,
+			"A empresa inclui e avalia a questão da discriminação de gênero e do assédio sexual dentro de seus procedimentos de gestão de riscos estratégicos e reputacionais": 1,
+			"A empresa possui métricas para avaliar o sucesso de seus programas contra a discriminação de gênero e o assédio sexual": 1,
+			"A empresa possui outras políticas contra a discriminação de gênero, assédio moral ou assédio sexual": 0,
+			"A empresa não possui política contra discriminação de gênero, assédio moral ou assédio sexual contra colaboradoras": false
+		}
+	}
+]
