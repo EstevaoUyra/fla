@@ -38,3 +38,12 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# data #
+######################
+answers.csv
+ident.csv
+answers - BKP.csv
+fields.csv
+questions.json
+questionario.pdf
