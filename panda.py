@@ -170,7 +170,7 @@ for index, row in df.iterrows():
 	demoData[index]["motivosaidaGeneroCargo"] = demog2array(row[556:664]).applymap(cleanN)
 
 	# Preencher com a quantidade de colaboradores/as, de acordo com tempo de permanência na empresa, gênero e raça/etnia (caso a empresa não tenha monitoramento pelo recorte de cor/raça, indicar apenas o numero total de colaboradores/as)
-	demoData[index]["permanenciaGeneroRaca"] = demog2array(row[664:700]).transpose()
+	demoData[index]["permanenciaGeneroRaca"] = demog2array(row[664:700]).transpose().applymap(cleanN)
 
 	# Preencher  com  a  quantidade  de colaboradores/as  capacitados/as ou treinados/as,  de  acordo  com o  tipo de capacitação ou treinamento, gênero e cor/raça (caso a empresa não tenha monitoramento pelo recorte de cor/raça, indicar apenas o numero total de colaboradores/as)
 	demoData[index]["capacitacaoGeneroRaca"] = demog2array(row[700:754]).applymap(cleanN)
