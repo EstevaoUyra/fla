@@ -57,7 +57,8 @@ def idCny(cnyIP): # who's this company? fetch its metadata from ident.csv
 
 def cleanNum(item):
 # cleans string-formatted numbers into int objects; used in tidying up demographic dataframes
-	empty = ["nt", "n", "nn", "tn", "-", "na", "--", "nd", "n/t", "tnt", "nan", "bn", "v", "b", "t", "ntnt"] # empty field markers
+	empty = ["nt", "n", "nn", "tn", "-", "na", "--", "nd", "n/t", "tnt", "nan", "bn", "v", "b", "t", "ntnt","o","ny"] # empty field markers
+
 	if isinstance(item, float):
 		if math.isnan(item):
 			return 0
@@ -67,15 +68,33 @@ def cleanNum(item):
 		return item
 	elif item == '' or item == '0':
 		return 0
-	elif item.replace('.','').lower().strip() in empty or "NT" in item:
+	elif item.replace('.','').lower().strip() in empty or "NT" in item or "Nt" in item:
 		return None
+	elif 'idade' in item: # noninformative
+		return None
+	elif 'todos -' in item or 'todas -' in item:
+		return int(item[7:])
+	elif '29 total (homens e mulheres)' == item: # Not enough information
+		return None
+	elif item == "1302'": # Typo
+		return 1302
+	elif item == 'O3' or item == '03n': # More typos
+		return 3
+	elif 'Tempo médio' in item:
+		return None
+#	elif '100%' in item: #to solve
+#		return -1
+#	elif 'menos estagiários' in item:
+#		return -2 #flag for changing
+
+
 	else:
 		try:
-			return int(item.replace('.', '').rstrip('0'))
+			return int("0"+ item.replace('.', '').rstrip('0').strip())
 		except:
 			print type(item), item
-			return None
-	
+			return item
+
 # setting up data frame
 df = pd.read_csv('answers.csv', header=0) # raw data
 
@@ -104,15 +123,15 @@ demoData = []
 ####### COMPANY BY COMPANY ANALYSIS is where all the action unfolds
 
 for index, row in df.iterrows():
-	score = 0 # initial score for cny	
-	
+	score = 0 # initial score for cny
+
 	cnyName = row[3] # mother company name
 
 	# identifying company
 	cnyID = idCny(row[0])
 	df.loc[index, "respEmail"] = cnyID[1] # respondent email
 	df.loc[index, "ciaNome"] = cnyID[0] # actual name, from ID form
-	
+
 	print "Processing company no. " + str(index) + ": " + cnyName
 
 	# looping through multiple-choice questions
@@ -133,6 +152,7 @@ for index, row in df.iterrows():
 	# c2    3			6			9				1
 	# c3    3			5			9				9
 	# c4    6			2			3				3
+
 
 	demoData.append({})
 	cleanN = lambda x: cleanNum(x) # lambda for tidying up demographic dataframes made up only of ints
@@ -211,6 +231,10 @@ for index, row in df.iterrows():
 	# Preencher com a quantidade de colaboradores/as trans na empresa, de acordo com nível hierárquico e identidade de gênero
 	demoData[index]["cargoTrans"] = demog2array(row[1238:1256]).transpose().applymap(cleanN)
 
+	demoData[index]["nomeDaEmpresa"] = (index, row[3])
+
+	[0,2,4,70]
+
 	if score > hiScore[1]:
 		hiScore = row[3], score
 
@@ -220,7 +244,7 @@ print hiScore
 with open('demoData.csv', 'wb') as outFile:
     dict_writer = csv.DictWriter(outFile, demoData[0].keys())
     dict_writer.writeheader()
-    dict_writer.writerows(demoData)
+    dict_writer.writerows(np.array(demoData))
 
 # erases demographic data from main dataframe
 df.drop(df.columns[89:1256], axis=1, inplace=True)
