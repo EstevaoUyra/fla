@@ -64,6 +64,8 @@ def cleanNum(item):
 			return 0
 		else:
 			return int(item)
+	elif item == None:
+		return None
 	elif isinstance(item, int):
 		return item
 	elif item == '' or item == '0':
@@ -82,18 +84,22 @@ def cleanNum(item):
 		return 3
 	elif 'Tempo médio' in item:
 		return None
-#	elif '100%' in item: #to solve
-#		return -1
-#	elif 'menos estagiários' in item:
-#		return -2 #flag for changing
-
-
 	else:
 		try:
 			return int("0"+ item.replace('.', '').rstrip('0').strip())
 		except:
-			print type(item), item
+			print (type(item), item)
 			return item
+#	elif '100%' in item: #to solve
+#		return -1
+#	elif 'menos estagiários' in item:
+#		return -2 #flag for changing
+def cleanSalary(item):
+	if isinstance(item, str):
+		if len(item.split(',')) == 2: 	# Standard money format rrrr,ss
+			return int(item.split(',')[0]) #ignore cents
+		elif len(item.split('.')) == 2: # In thousands
+			return 1000*int(item.split(',')[0])
 
 # setting up data frame
 df = pd.read_csv('answers.csv', header=0) # raw data
@@ -132,7 +138,7 @@ for index, row in df.iterrows():
 	df.loc[index, "respEmail"] = cnyID[1] # respondent email
 	df.loc[index, "ciaNome"] = cnyID[0] # actual name, from ID form
 
-	print "Processing company no. " + str(index) + ": " + cnyName
+	print ("Processing company no. " + str(index) + ": " + cnyName)
 
 	# looping through multiple-choice questions
 	indexCol = 0
@@ -175,7 +181,7 @@ for index, row in df.iterrows():
 	demoData[index]["jornadaGeneroCargo"] = demog2array(row[304:400]).applymap(cleanN)
 
 	# Preencher  com os  valores  (em  R$) de salário  médio  na  empresa,  por nível  hierárquico, gênero,  e cor/etnia  (caso a empresa não tenha monitoramento pelo recorte de raça, indicar apenas o numero total de colaboradores/as). Não considerar remuneração variável
-	demoData[index]["salarioGeneroRaca"] = demog2array(row[400:448])
+	demoData[index]["salarioGeneroRaca"] = demog2array(row[400:448])#.applymap(cleanN)
 
 	# Preencher  com  a  quantidade  de  colaboradores/as  por nível  educacional  mais  avançado  que  já cursou, gênero e cor/etnia (caso a empresa não tenha monitoramento pelo recorte de raça, indicar apenas o numero total de colaboradores/as)
 	demoData[index]["educacaoGeneroRaca"] = demog2array(row[448:484]).applymap(cleanN)
@@ -233,18 +239,16 @@ for index, row in df.iterrows():
 
 	demoData[index]["nomeDaEmpresa"] = (index, row[3])
 
-	[0,2,4,70]
-
 	if score > hiScore[1]:
 		hiScore = row[3], score
 
-print hiScore
+print (hiScore)
 
 # exporting demoData
-with open('demoData.csv', 'wb') as outFile:
-    dict_writer = csv.DictWriter(outFile, demoData[0].keys())
-    dict_writer.writeheader()
-    dict_writer.writerows(np.array(demoData))
+#with open('demoData.csv', 'wb') as outFile:
+#    dict_writer = csv.DictWriter(outFile, demoData[0].keys())
+#    dict_writer.writeheader()
+#    dict_writer.writerows(np.array(demoData))
 
 # erases demographic data from main dataframe
 df.drop(df.columns[89:1256], axis=1, inplace=True)
