@@ -52,3 +52,4 @@ questionario.pdf
 ######
 # Notebooks #
 *.ipynb
+.ipynb_checkpoints/
