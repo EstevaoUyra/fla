@@ -20,6 +20,7 @@
 *.tar
 *.zip
 
+
 # Logs and databases #
 ######################
 *.log
@@ -47,3 +48,7 @@ answers - BKP.csv
 fields.csv
 questions.json
 questionario.pdf
+
+######
+# Notebooks #
+*.ipynb
