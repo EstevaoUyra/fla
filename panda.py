@@ -185,7 +185,7 @@ for index, row in df.iterrows():
 	demoData[index]["jornadaGeneroCargo"] = demog2array(row[304:400]).applymap(cleanN)
 
 	# Preencher  com os  valores  (em  R$) de salário  médio  na  empresa,  por nível  hierárquico, gênero,  e cor/etnia  (caso a empresa não tenha monitoramento pelo recorte de raça, indicar apenas o numero total de colaboradores/as). Não considerar remuneração variável
-	demoData[index]["salarioGeneroRaca"] = demog2array(row[400:448])#.applymap(cleanN)
+	demoData[index]["salarioGeneroRaca"] = demog2array(row[400:448]).applymap(cleanN)
 
 	# Preencher  com  a  quantidade  de  colaboradores/as  por nível  educacional  mais  avançado  que  já cursou, gênero e cor/etnia (caso a empresa não tenha monitoramento pelo recorte de raça, indicar apenas o numero total de colaboradores/as)
 	demoData[index]["educacaoGeneroRaca"] = demog2array(row[448:484]).applymap(cleanN)
@@ -206,7 +206,7 @@ for index, row in df.iterrows():
 	demoData[index]["capacitacaoGeneroRaca"] = demog2array(row[700:754]).applymap(cleanN)
 
 	# Preencher  com  a  quantidade  de colaboradores  capacitados ou treinados,  de  acordo  com o  tipo de capacitação ou treinamento, gênero e tipo de cargo
-	demoData[index]["capacitacaoGeneroCargo"] = demog2array(row[754:862])#.applymap(cleanN)
+	demoData[index]["capacitacaoGeneroCargo"] = demog2array(row[754:862]).applymap(cleanN)
 
 	# Preencher  com  a  quantidade  de colaboradores/as,  de  acordo  com gênero e cor/raça,  com  dados relativos ao último exercício da empresa (caso a empresa não tenha monitoramento pelo recorte de cor/raça, indicar apenas o numero total de colaboradores/as)
 	demoData[index]["maternidadeGeneroRaca"] = demog2array(row[862:892]).applymap(cleanN)
