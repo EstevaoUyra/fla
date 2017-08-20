@@ -64,35 +64,35 @@ def cleanNum(item):
 	empty = ["nt", "n", "nn", "tn", "-", "na", "--", "nd", "n/t", "tnt", "nan", "bn", "v", "b", "t", "ntnt","o","ny"] # empty field markers
 
 	if isinstance(item, float):
-		if math.isnan(item):
-			return 0
+		if np.isnan(item):
+			return np.nan
 		else:
 			return int(item)
 	elif item == None:
-		return None
+		return np.nan
 	elif isinstance(item, int):
 		return item
 	elif item == '' or item == '0':
 		return 0
 	elif item.replace('.','').lower().strip() in empty or "NT" in item or "Nt" in item:
-		return None
+		return np.nan
 	elif 'idade' in item: # noninformative
-		return None
+		return np.nan
 	elif 'todos -' in item or 'todas -' in item:
 		return int(item[7:])
 	elif '29 total (homens e mulheres)' == item: # Not enough information
-		return None
+		return np.nan
 	#elif item == "1302'": # Typo
 	#	return 1302
 	#elif item == 'O3' or item == '03n': # More typos
 	#	return 3
 	elif 'Tempo médio' in item:
-		return None
+		return np.nan
 	else:
 		try:
 			return int("0"+ item.replace('.', '').rstrip('0').strip()) # for numbers in the thousands e.g. 13.405
 		except:
-			print (type(item), item)
+			#print (type(item), item)
 			return item
 #	elif '100%' in item: #to solve
 #		return -1
@@ -206,7 +206,7 @@ for index, row in df.iterrows():
 	demoData[index]["capacitacaoGeneroRaca"] = demog2array(row[700:754]).applymap(cleanN)
 
 	# Preencher  com  a  quantidade  de colaboradores  capacitados ou treinados,  de  acordo  com o  tipo de capacitação ou treinamento, gênero e tipo de cargo
-	demoData[index]["capacitacaoGeneroCargo"] = demog2array(row[754:862]).applymap(cleanN)
+	demoData[index]["capacitacaoGeneroCargo"] = demog2array(row[754:862])#.applymap(cleanN)
 
 	# Preencher  com  a  quantidade  de colaboradores/as,  de  acordo  com gênero e cor/raça,  com  dados relativos ao último exercício da empresa (caso a empresa não tenha monitoramento pelo recorte de cor/raça, indicar apenas o numero total de colaboradores/as)
 	demoData[index]["maternidadeGeneroRaca"] = demog2array(row[862:892]).applymap(cleanN)
