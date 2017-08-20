@@ -82,18 +82,11 @@ def cleanNum(item):
 		return int(item[7:])
 	elif '29 total (homens e mulheres)' == item: # Not enough information
 		return np.nan
-	#elif item == "1302'": # Typo
-	#	return 1302
-	#elif item == 'O3' or item == '03n': # More typos
-	#	return 3
 	elif 'Tempo médio' in item:
 		return np.nan
 	else:
-		try:
-			return int("0"+ item.replace('.', '').rstrip('0').strip()) # for numbers in the thousands e.g. 13.405
-		except:
-			#print (type(item), item)
-			return item
+		if len(item.strip().split('.')) > 1: # if input can be split into '.'
+			return int(item.replace('.',''))
 #	elif '100%' in item: #to solve
 #		return -1
 #	elif 'menos estagiários' in item:
@@ -185,7 +178,7 @@ for index, row in df.iterrows():
 	demoData[index]["jornadaGeneroCargo"] = demog2array(row[304:400]).applymap(cleanN)
 
 	# Preencher  com os  valores  (em  R$) de salário  médio  na  empresa,  por nível  hierárquico, gênero,  e cor/etnia  (caso a empresa não tenha monitoramento pelo recorte de raça, indicar apenas o numero total de colaboradores/as). Não considerar remuneração variável
-	demoData[index]["salarioGeneroRaca"] = demog2array(row[400:448]).applymap(cleanN)
+	demoData[index]["salarioGeneroRaca"] = demog2array(row[400:448])
 
 	# Preencher  com  a  quantidade  de  colaboradores/as  por nível  educacional  mais  avançado  que  já cursou, gênero e cor/etnia (caso a empresa não tenha monitoramento pelo recorte de raça, indicar apenas o numero total de colaboradores/as)
 	demoData[index]["educacaoGeneroRaca"] = demog2array(row[448:484]).applymap(cleanN)
