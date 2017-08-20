@@ -12,19 +12,23 @@ def demog2array(rowList):
 	# turns linearized array data back into an array
 	# outputs a pandas dataFrame with tidy data
 	labelList = rowList.index
+	report = False
+	if labelList[0] == "Preencher  com  a  quantidade  de colaboradores/as em  relaç... >> Homens na diretoria >> Solteiro/a":
+		report = True
 	rows = [] # list of row names, or df indices
 	cols = [] # list of col names, or df columns
 	for label in labelList:
 		cCol = label.split(' >> ')[1]
 		cRow = label.split(' >> ')[2]
-		#print rows
 		if len(cols) == 0 or cCol not in cols:
 			cols.append(cCol)
 		if len(rows) == 0 or cRow not in rows:
 			rows.append(cRow)
 	outArray = pd.DataFrame(index=cols, columns=rows)
+	
+	#if report:
+		#print rows, cols
 	n = 0
-
 	for item in rowList:
 		cCol = labelList[n].split(' >> ')[1]
 		cRow = labelList[n].split(' >> ')[2]
@@ -76,23 +80,22 @@ def cleanNum(item):
 		return int(item[7:])
 	elif '29 total (homens e mulheres)' == item: # Not enough information
 		return None
-	elif item == "1302'": # Typo
-		return 1302
-	elif item == 'O3' or item == '03n': # More typos
-		return 3
+	#elif item == "1302'": # Typo
+	#	return 1302
+	#elif item == 'O3' or item == '03n': # More typos
+	#	return 3
 	elif 'Tempo médio' in item:
 		return None
-#	elif '100%' in item: #to solve
-#		return -1
-#	elif 'menos estagiários' in item:
-#		return -2 #flag for changing
-
+	#elif '100%' in item: #to solve
+	#	return -1
+	#elif 'menos estagiários' in item:
+	#	return -2 #flag for changing
 
 	else:
 		try:
-			return int("0"+ item.replace('.', '').rstrip('0').strip())
+			return int("0"+ item.replace('.', '').rstrip('0').strip()) # for numbers in the thousands e.g. 13.405
 		except:
-			print type(item), item
+			#print type(item), item
 			return item
 
 # setting up data frame
@@ -207,8 +210,13 @@ for index, row in df.iterrows():
 	# Preencher  com  a  quantidade  de colaboradores/as em  relação  ao estado  civil,  por gênero e cor/raça (caso a empresa não tenha monitoramento pelo recorte de cor/raça, indicar apenas o numero total de colaboradores/as)
 	demoData[index]["estadocivilGeneroRaca"] = demog2array(row[952:988]).transpose().applymap(cleanN)
 
-	# Preencher  com  a  quantidade  de colaboradores/as em  relação  ao estado  civil,  por gênero e tipo de cargo
-	demoData[index]["estadocivilGeneroCargo"] = demog2array(row[988:1060]).transpose().applymap(cleanN)
+	# Preencher  com  a  quantidade  de colaboradores/as em  relação  ao estado  civil,  por gênero e tipo de cargo	
+	ecgCargoM = demog2array(row[988:1018])
+	ecgCargoMBad = demog2array(row[1018:1024]); ecgCargoMBad.columns = ecgCargoM.columns
+	ecgCargoF = demog2array(row[1024:1054])
+	ecgCargoFBad = demog2array(row[1054:1060]); ecgCargoFBad.columns = ecgCargoF.columns
+
+	demoData[index]["estadocivilGeneroCargo"] = pd.concat((ecgCargoM,ecgCargoMBad,ecgCargoF,ecgCargoFBad), axis=0).transpose().applymap(cleanN)
 
 	# Preencher com a quantidade de colaboradores/as em relação ao número de filhos, por gênero e tipo de cargo
 	demoData[index]["filhosGeneroCargo"] = demog2array(row[1060:1120]).transpose().applymap(cleanN)
