@@ -25,7 +25,7 @@ def demog2array(rowList):
 		if len(rows) == 0 or cRow not in rows:
 			rows.append(cRow)
 	outArray = pd.DataFrame(index=cols, columns=rows)
-	
+
 	#if report:
 		#print rows, cols
 	n = 0
@@ -60,37 +60,40 @@ def idCny(cnyIP): # who's this company? fetch its metadata from ident.csv
 	return str(cnyID['Nome da empresa/companhia respondente:']).split('\n')[0].split("  ")[-1].strip(), str(cnyID['Email de contato do/a respondente:']).split('\n')[0].split("  ")[-1].strip()
 
 def cleanNum(item):
-# cleans string-formatted numbers into int objects; used in tidying up demographic dataframes
-	empty = ["nt", "n", "nn", "tn", "-", "na", "--", "nd", "n/t", "tnt", "nan", "bn", "v", "b", "t", "ntnt","o","ny"] # empty field markers
+    # cleans string-formatted numbers into int objects; used in tidying up demographic dataframes
+    empty = ["nt", "n", "nn", "tn", "-", "na", "--", "nd", "n/t", "tnt", "nan", "bn", "v", "b", "t", "ntnt","o","ny"] # empty field markers
 
-	if isinstance(item, float):
-		if np.isnan(item):
-			return np.nan
-		else:
-			return int(item)
-	elif item == None:
-		return np.nan
-	elif isinstance(item, int):
-		return item
-	elif item == '' or item == '0':
-		return 0
-	elif item.replace('.','').lower().strip() in empty or "NT" in item or "Nt" in item:
-		return np.nan
-	elif 'idade' in item: # noninformative
-		return np.nan
-	elif 'todos -' in item or 'todas -' in item:
-		return int(item[7:])
-	elif '29 total (homens e mulheres)' == item: # Not enough information
-		return np.nan
-	elif 'Tempo médio' in item:
-		return np.nan
-	else:
-		if len(item.strip().split('.')) > 1: # if input can be split into '.'
-			return int(item.replace('.',''))
-#	elif '100%' in item: #to solve
-#		return -1
-#	elif 'menos estagiários' in item:
-#		return -2 #flag for changing
+    if isinstance(item, float):
+        if np.isnan(item):
+            return np.nan
+        else:
+            return int(item)
+    elif item == None:
+        return np.nan
+    elif isinstance(item, int):
+        return item
+    elif item == '' or item == '0':
+        return 0
+    elif item.replace('.','').lower().strip() in empty or "NT" in item or "Nt" in item:
+        return np.nan
+    elif 'idade' in item: # noninformative
+        return np.nan
+    elif 'todos -' in item or 'todas -' in item:
+        return int(item[7:])
+    elif '29 total (homens e mulheres)' == item: # Not enough information
+        return np.nan
+    elif 'Tempo médio' in item:
+        return np.nan
+    else:
+        try:
+            return int(item)
+        except:
+            if len(item.strip().split('.')) > 1: # if input can be split into '.'
+                return int(item.replace('.',''))
+            else:
+                return 'strange'
+
+
 def cleanSalary(item):
 	if isinstance(item, str):
 		if len(item.split(',')) == 2: 	# Standard money format rrrr,ss
@@ -210,7 +213,7 @@ for index, row in df.iterrows():
 	# Preencher  com  a  quantidade  de colaboradores/as em  relação  ao estado  civil,  por gênero e cor/raça (caso a empresa não tenha monitoramento pelo recorte de cor/raça, indicar apenas o numero total de colaboradores/as)
 	demoData[index]["estadocivilGeneroRaca"] = demog2array(row[952:988]).transpose().applymap(cleanN)
 
-	# Preencher  com  a  quantidade  de colaboradores/as em  relação  ao estado  civil,  por gênero e tipo de cargo	
+	# Preencher  com  a  quantidade  de colaboradores/as em  relação  ao estado  civil,  por gênero e tipo de cargo
 	ecgCargoM = demog2array(row[988:1018])
 	ecgCargoMBad = demog2array(row[1018:1024]); ecgCargoMBad.columns = ecgCargoM.columns
 	ecgCargoF = demog2array(row[1024:1054])
