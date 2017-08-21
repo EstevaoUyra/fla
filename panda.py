@@ -257,4 +257,11 @@ print (hiScore)
 
 # erases demographic data from main dataframe
 df.drop(df.columns[89:1256], axis=1, inplace=True)
+
+# Add cosmetics to company sectors
+cosmeticAuxIndices = np.array(['Cosm' in x or 'Beleza' in x for x in df.iloc[(df.iloc[:,8]=='Outro').values,9].values])
+trueIndexes = df.iloc[(df.iloc[:,8]=='Outro').values,9][cosmeticAuxIndices].index
+df.iloc[trueIndexes,8] = 'Cosmeticos'
+
+
 df.to_csv('output.csv', header=True, index=False, quoting=csv.QUOTE_ALL, escapechar= '\\')
