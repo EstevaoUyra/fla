@@ -1,6 +1,11 @@
 import numpy as np
 import pandas as pd
+from nonspecifics import compareAmongNANS, divideMatrixByVector
+'''
+Functions that are specific to dealing with demographic data from the questionnaire
+'''
 
+#calculate the sum of specifics for comparating with 'total' column
 def sumToTotal(matrix):
     index = totalIndices(matrix)
     #eachGENDER holds the sum of discriminated columns of given gender
@@ -12,6 +17,7 @@ def sumToTotal(matrix):
     totalFemales =  matrix.iloc[:,index['mulheres']].values.reshape(-1)
     return (eachMales, totalMales), (eachFemales, totalFemales)
 
+# When total is 0 but there are specifics > 0, sum specifics and put on total
 def substituteMissingTotal(matrix):
     idx = totalIndices(matrix)
     (eachMales, totalMales), (eachFemales, totalFemales) = sumToTotal(matrix)
@@ -22,6 +28,7 @@ def substituteMissingTotal(matrix):
     matrix.iloc[:,idx['mulheres']] = totalFemales
     return matrix
 
+#return a dict containing the index of the 'total' column for woman and men
 def totalIndices(matrix):
     index={}
     for gender in ['homens', 'mulheres']:
@@ -36,9 +43,6 @@ def compareGenderSum(matrix):
     (menEach,menTotal),(femaleEach,femaleTotal) = sumToTotal(matrix)
     return compareAmongNANS(menEach.sum(axis=1),menTotal), compareAmongNANS(femaleEach.sum(axis=1),femaleTotal)
 
-# Helper function to make NaN == NaN true
-def compareAmongNANS(u,v):
-    return np.logical_or(u==v,np.logical_and(np.isnan(u),np.isnan(v)))
 
 # Determine how many indexes have values diferent from NaN outside 'total' column
 def isDiscriminated(matrix):
@@ -49,7 +53,7 @@ def isDiscriminated(matrix):
 def getDemo(demoData, field, proportion = True):
     clusteredData = pd.DataFrame(columns=['specifics','company','variable','value'])
     for empresai in demoData:
-        if proportion:
+        if proportion and field not in ['salarioGeneroRaca']:
             aux = transformInProportion(empresai[field])
         else:
             aux = pd.DataFrame.copy(empresai[field])
@@ -59,21 +63,34 @@ def getDemo(demoData, field, proportion = True):
 
     return clusteredData[clusteredData['value'].isnull() == False]
 
+# substitute discriminated values of dataframe to the proportions given by sumToTotal
 def transformInProportion(matrix,dropTots = True):
     if len(matrix.columns) == 2:
-        return matrix
-    (eachMales, totalMales), (eachFemales, totalFemales) = sumToTotal(matrix)
+        return matrix #for the cases in which there is no 'total' column
+
     aux = pd.DataFrame.copy(matrix)
-    # substitute discriminated values of dataframe to the proportions given by sumToTotal
-    aux.iloc[:,:idxTotal(aux,'homens')] = divideMatrixByVector(eachMales,totalMales)
-    aux.iloc[:,idxTotal(aux,'homens')+1: idxTotal(aux,'mulheres') ] = divideMatrixByVector(eachFemales,totalFemales)
+    totalIdx = totalIndices(aux)
+    (eachMales, totalMales), (eachFemales, totalFemales) = sumToTotal(matrix)
+
+    aux.iloc[:,:totalIdx['homens']] = divideMatrixByVector(eachMales,totalMales)
+    aux.iloc[:,totalIdx['homens']+1: totalIdx['mulheres'] ] = divideMatrixByVector(eachFemales,totalFemales)
     if dropTots:
-        aux.drop(['Total de homens','Total de mulheres'], axis=1, inplace=True)
+        aux.drop(aux.columns[[totalIdx['homens'],totalIdx['mulheres']]], axis=1, inplace=True)
     return aux
 
-def divideMatrixByVector(matrix,vector):
-    assert matrix.shape[0] == vector.shape[0]
-    return np.array([matrix[i,:]/vector[i] if vector[i]!=0 else -1*matrix[i,:] for i in range(matrix.shape[0])])
+# Flags as inconsistent any field that is filled with specifics that sum bigger than the total
+def proportionConsistency(demoData,field):
+    oneFieldAllCnys = getDemo(demoData,field)
+    consistency = pd.DataFrame( index = oneFieldAllCnys['company'].unique(),
+                               columns=['Proportions max','Consistent','Number of Categories','field'])
 
-def idxTotal(df, gender):
-    return np.nonzero(df.columns=='Total de '+str(gender))[0][0]
+
+    for cnyi in oneFieldAllCnys['company'].unique():
+        maxOfProportions = oneFieldAllCnys[ oneFieldAllCnys['company'] == cnyi ]['value'].max()
+        consistency.loc[cnyi, 'Proportions max'] = maxOfProportions
+
+        nCategories = oneFieldAllCnys[ oneFieldAllCnys['company'] == cnyi ]['specifics'].unique().shape[0]
+        consistency.loc[cnyi, 'Number of Categories'] = nCategories
+    consistency['Consistent'] = consistency['Proportions max'].apply(lambda x: x <= 1)
+    consistency['field'] = field
+    return consistency

@@ -4,6 +4,7 @@
 import pandas as pd
 import numpy as np
 import csv, json, math
+from demoFunctions import substituteMissingTotal
 
 # company = cny
 
@@ -265,6 +266,18 @@ df.drop(df.columns[89:1256], axis=1, inplace=True)
 cosmeticAuxIndices = np.array(['Cosm' in x or 'Beleza' in x for x in df.iloc[(df.iloc[:,8]=='Outro').values,9].values])
 trueIndexes = df.iloc[(df.iloc[:,8]=='Outro').values,9][cosmeticAuxIndices].index
 df.iloc[trueIndexes,8] = 'Cosmeticos'
+
+# All data keys of demographic data
+dataKeys = ['cargoGeneroIdade', 'capacitacaoGeneroCargo', 'cargoTrans', 'salarioGeneroRaca', 'conAdmFormacaoGenero', 'educacaoGeneroIdade', 'jornadaGeneroRaca', 'conAdmIdadeGeneroRaca', 'permanenciaGeneroRaca', 'avaliacaoGeneroCargo', 'capacitacaoGeneroRaca', 'cargoGeneroDefic', 'maternidadeGeneroCargo', 'estadocivilGeneroCargo', 'jornadaGeneroCargo', 'cargoGeneroRaca', 'demissoesGeneroIdade', 'maternidadeGeneroRaca', 'vinculoGeneroRaca',
+   'motivosaidaGeneroCargo', 'avaliacaoGeneroRaca', 'estadocivilGeneroRaca', 'educacaoGeneroRaca', 'filhosGeneroCargo']
+# The keys that do not cause problems
+cleanKeys =['cargoGeneroIdade', 'capacitacaoGeneroCargo',                                                            'educacaoGeneroIdade', 'jornadaGeneroRaca', 'conAdmIdadeGeneroRaca', 'permanenciaGeneroRaca',                         'capacitacaoGeneroRaca',                     'maternidadeGeneroCargo', 'estadocivilGeneroCargo',                       'cargoGeneroRaca', 'demissoesGeneroIdade', 'maternidadeGeneroRaca', 'vinculoGeneroRaca',
+   'motivosaidaGeneroCargo',                        'estadocivilGeneroRaca', 'educacaoGeneroRaca', 'filhosGeneroCargo']
+
+# When total is 0 but there are specifics > 0, sum specifics and put on total, for all companies
+for cnyi in range(len(demoData)):
+    for field in cleanKeys:
+        demoData[cnyi][field] = substituteMissingTotal(demoData[cnyi][field])
 
 
 df.to_csv('output.csv', header=True, index=False, quoting=csv.QUOTE_ALL, escapechar= '\\')
