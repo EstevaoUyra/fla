@@ -2,13 +2,7 @@ import numpy as np
 import pandas as pd
 
 def sumToTotal(matrix):
-    index={}
-    for gender in ['homens', 'mulheres']:
-        totalGender = [gender in x.lower() and 'total' in x.lower() for x in list(matrix.columns)]
-        index[gender] = np.nonzero(totalGender)[0][0]
-    #index is the column with 'total GENDER' in it
-    assert index['homens'] < index['mulheres']
-
+    index = totalIndices(matrix)
     #eachGENDER holds the sum of discriminated columns of given gender
     #totalGENDER is the value of the 'total GENDER' column
     eachMales =  matrix.iloc[:,:index['homens']].values
@@ -18,6 +12,24 @@ def sumToTotal(matrix):
     totalFemales =  matrix.iloc[:,index['mulheres']].values.reshape(-1)
     return (eachMales, totalMales), (eachFemales, totalFemales)
 
+def substituteMissingTotal(matrix):
+    idx = totalIndices(matrix)
+    (eachMales, totalMales), (eachFemales, totalFemales) = sumToTotal(matrix)
+    totalMales[totalMales==0] = eachMales.sum(axis=1)[totalMales==0]
+    matrix.iloc[:,idx['homens']] = totalMales
+
+    totalFemales[totalFemales==0] = eachFemales.sum(axis=1)[totalFemales==0]
+    matrix.iloc[:,idx['mulheres']] = totalFemales
+    return matrix
+
+def totalIndices(matrix):
+    index={}
+    for gender in ['homens', 'mulheres']:
+        totalGender = [gender in x.lower() and 'total' in x.lower() for x in list(matrix.columns)]
+        #index is the column with 'total GENDER' in it
+        index[gender] = np.nonzero(totalGender)[0][0]
+    assert index['homens'] < index['mulheres']
+    return index
 
 #Returns true if the sum of columns is equal to 'total' column
 def compareGenderSum(matrix):
@@ -48,6 +60,8 @@ def getDemo(demoData, field, proportion = True):
     return clusteredData[clusteredData['value'].isnull() == False]
 
 def transformInProportion(matrix,dropTots = True):
+    if len(matrix.columns) == 2:
+        return matrix
     (eachMales, totalMales), (eachFemales, totalFemales) = sumToTotal(matrix)
     aux = pd.DataFrame.copy(matrix)
     # substitute discriminated values of dataframe to the proportions given by sumToTotal
@@ -59,7 +73,7 @@ def transformInProportion(matrix,dropTots = True):
 
 def divideMatrixByVector(matrix,vector):
     assert matrix.shape[0] == vector.shape[0]
-    return np.array([matrix[i,:]/vector[i] if vector[i]!=0 else 2*np.ones(matrix.shape[1]) for i in range(matrix.shape[0])])
+    return np.array([matrix[i,:]/vector[i] if vector[i]!=0 else -1*matrix[i,:] for i in range(matrix.shape[0])])
 
 def idxTotal(df, gender):
     return np.nonzero(df.columns=='Total de '+str(gender))[0][0]

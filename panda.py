@@ -91,8 +91,8 @@ def cleanNum(item):
             if len(item.strip().split('.')) > 1: # if input can be split into '.'
                 return int(item.replace('.',''))
             else:
-                return 'strange'
-
+                print(type(item),item)
+                return np.nan
 
 def cleanSalary(item):
 	if isinstance(item, str):
@@ -169,7 +169,10 @@ for index, row in df.iterrows():
 	#print demoData[index]["cargoGeneroRaca"]
 
 	# Preencher com  a  quantidade  de  colaboradoras,  de  acordo  com nível  hierárquico,  gênero e faixa etária
-	demoData[index]["cargoGeneroIdade"] = demog2array(row[152:232]).applymap(cleanN)
+	cgiFemales = demog2array(row[152:192]).applymap(cleanN)
+	cgiMales = demog2array(row[192:232]).applymap(cleanN)
+	demoData[index]["cargoGeneroIdade"] = pd.concat((cgiMales,cgiFemales),axis=1)
+
 
 	# Preencher com a quantidade de colaboradores/as, de acordo com o vínculo de colaboração, gênero e cor/etnia (caso a empresa não tenha monitoramento pelo recorte de raça, indicar apenas o numero total de colaboradores/as)
 	demoData[index]["vinculoGeneroRaca"] = demog2array(row[232:256]).transpose().applymap(cleanN)
