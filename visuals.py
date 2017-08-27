@@ -2,9 +2,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from demoFunctions import getDemo
 
-# Plot simple chart with data from one field
-def stripDemog(demoData,field):
-    fieldData = getDemo(demoData,field,proportion=True)
+
+def stripDemog(demoData,field,proportion):
+    '''Plot single chart with all data from the specified field'''
+    fieldData = getDemo(demoData,field,proportion)
     fig = sns.stripplot(y='variable', x="value", hue="specifics",
                   data=fieldData, dodge=True, jitter=True,
                   alpha=.9, zorder=1)
@@ -14,3 +15,6 @@ def stripDemog(demoData,field):
     handles, labels = ax.get_legend_handles_labels()
     lgd = ax.legend(handles, labels, loc='upper center', bbox_to_anchor=(1.5,.6))
     ax.grid('on')
+
+def plotResumed(demoData,field)
+    pass

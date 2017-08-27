@@ -13,9 +13,9 @@ def divideMatrixByVector(matrix,vector):
 # Helper function to make NaN == NaN true
 def compareAmongNANS(u,v):
     return np.logical_or(u==v,np.logical_and(np.isnan(u),np.isnan(v)))
-
-# Given the name of a company, returns its index
+    
 def indexFromName(name):
+    '''Given the name of a company, returns its index'''
     for cny in demoData:
         if cny['nomeDaEmpresa'][1] == name:
             return cny['nomeDaEmpresa'][0]

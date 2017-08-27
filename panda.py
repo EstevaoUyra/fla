@@ -279,5 +279,4 @@ for cnyi in range(len(demoData)):
     for field in cleanKeys:
         demoData[cnyi][field] = substituteMissingTotal(demoData[cnyi][field])
 
-
 df.to_csv('output.csv', header=True, index=False, quoting=csv.QUOTE_ALL, escapechar= '\\')
