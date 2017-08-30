@@ -16,5 +16,5 @@ def stripDemog(demoData,field,proportion):
     lgd = ax.legend(handles, labels, loc='upper center', bbox_to_anchor=(1.5,.6))
     ax.grid('on')
 
-def plotResumed(demoData,field)
+def plotResumed(demoData,field):
     pass

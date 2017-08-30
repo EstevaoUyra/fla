@@ -4,7 +4,7 @@ from nonspecifics import compareAmongNANS, divideMatrixByVector
 '''
 Functions that are specific to dealing with demographic data from the questionnaire
 '''
-
+ 
 
 def sumToTotal(matrix):
     '''Calculate the sum of specifics for comparating with 'total' column.

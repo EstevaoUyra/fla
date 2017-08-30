@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import csv, json, math
 from demoFunctions import substituteMissingTotal
+import pickle
 
 # company = cny
 
@@ -128,7 +129,7 @@ demoData = []
 # row is a list containing the answer for each column/question for a given company
 
 ####### COMPANY BY COMPANY ANALYSIS is where all the action unfolds
-
+scoresAllCom = pd.DataFrame(columns= ['company', 'question','score'])
 for index, row in df.iterrows():
 	score = 0 # initial score for cny
 
@@ -140,13 +141,13 @@ for index, row in df.iterrows():
 	df.loc[index, "ciaNome"] = cnyID[0] # actual name, from ID form
 
 	print ("Processing company no. " + str(index) + ": " + cnyName)
-
 	# looping through multiple-choice questions
 	indexCol = 0
 	for col in row:
 		if labels[indexCol] in qs: # this is a multiple-choice question
 			points = scoringQuestions(row[3], labels[indexCol], col)
 			score += points
+			scoresAllCom = scoresAllCom.append(pd.DataFrame([[row[3],col,labels[indexCol],points]],columns = ['company', 'answer','question','score'] ) )
 			df.loc[index, labels[indexCol]] = points # add answer points as answer
 		indexCol += 1
 
@@ -252,7 +253,7 @@ for index, row in df.iterrows():
 		hiScore = row[3], score
 
 print (hiScore)
-
+pickle.dump(scoresAllCom,open('allCnyScore.pickle','wb'))
 # exporting demoData
 #with open('demoData.csv', 'wb') as outFile:
 #    dict_writer = csv.DictWriter(outFile, demoData[0].keys())
