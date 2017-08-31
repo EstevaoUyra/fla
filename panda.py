@@ -129,7 +129,7 @@ demoData = []
 # row is a list containing the answer for each column/question for a given company
 
 ####### COMPANY BY COMPANY ANALYSIS is where all the action unfolds
-scoresAllCom = pd.DataFrame(columns= ['company', 'question','score'])
+scoresAllCom = pd.DataFrame(columns = ['company', 'answer','question','score','ID'])
 for index, row in df.iterrows():
 	score = 0 # initial score for cny
 
@@ -147,7 +147,10 @@ for index, row in df.iterrows():
 		if labels[indexCol] in qs: # this is a multiple-choice question
 			points = scoringQuestions(row[3], labels[indexCol], col)
 			score += points
-			scoresAllCom = scoresAllCom.append(pd.DataFrame([[row[3],col,labels[indexCol],points]],columns = ['company', 'answer','question','score'] ) )
+			if isinstance(col,float) and np.isnan(col):
+				pass
+			else:
+				scoresAllCom = scoresAllCom.append(pd.DataFrame([[row[3]+'/'+cnyID[0],col,labels[indexCol],points,row['Submission ID']]],columns = ['company', 'answer','question','score','ID'] , index = [index]) )
 			df.loc[index, labels[indexCol]] = points # add answer points as answer
 		indexCol += 1
 
@@ -253,15 +256,26 @@ for index, row in df.iterrows():
 		hiScore = row[3], score
 
 print (hiScore)
-pickle.dump(scoresAllCom,open('allCnyScore.pickle','wb'))
+
+
 # exporting demoData
 #with open('demoData.csv', 'wb') as outFile:
 #    dict_writer = csv.DictWriter(outFile, demoData[0].keys())
 #    dict_writer.writeheader()
 #    dict_writer.writerows(np.array(demoData))
 
+# Create name for reference
+df['CompositeName'] = df['Nome do grupo a que pertence a companhia (se houver):']+'/'+df['ciaNome']
+
+# Drop repeated row
+idx = df[df['CompositeName']=='Beleza Natural/Beleza Natural'].index
+assert idx.shape[0] == 2 # There are in fact 2 repetitions
+df.drop(idx[0], axis=0,inplace=True)
+scoresAllCom.drop(idx[0], axis=0,inplace=True)
+
 # erases demographic data from main dataframe
 df.drop(df.columns[89:1256], axis=1, inplace=True)
+
 
 # Add cosmetics to company sectors
 cosmeticAuxIndices = np.array(['Cosm' in x or 'Beleza' in x for x in df.iloc[(df.iloc[:,8]=='Outro').values,9].values])
@@ -281,3 +295,7 @@ for cnyi in range(len(demoData)):
         demoData[cnyi][field] = substituteMissingTotal(demoData[cnyi][field])
 
 df.to_csv('output.csv', header=True, index=False, quoting=csv.QUOTE_ALL, escapechar= '\\')
+
+# Save files that cannot be generated in python 3
+#pickle.dump(df,open('cnDF.pickle','wb'))
+#pickle.dump(scoresAllCom,open('allCnyScore.pickle','wb'))
