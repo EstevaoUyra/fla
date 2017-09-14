@@ -4,7 +4,7 @@ from nonspecifics import compareAmongNANS, divideMatrixByVector
 '''
 Functions that are specific to dealing with demographic data from the questionnaire
 '''
- 
+
 
 def sumToTotal(matrix):
     '''Calculate the sum of specifics for comparating with 'total' column.
@@ -22,14 +22,16 @@ def sumToTotal(matrix):
     totalFemales =  matrix.iloc[:,index['mulheres']].values.reshape(-1)
     return (eachMales, totalMales), (eachFemales, totalFemales)
 
-def substituteMissingTotal(matrix):
+def substituteMissingTotal(matrix,ignoreTotal=False):
     '''When total is 0 but there are specifics > 0, sum specifics and put on total '''
     idx = totalIndices(matrix)
     (eachMales, totalMales), (eachFemales, totalFemales) = sumToTotal(matrix)
-    totalMales[totalMales==0] = eachMales.sum(axis=1)[totalMales==0]
+    #totalMales[totalMales==0] = eachMales.sum(axis=1)[totalMales==0]
+    totalMales[:] = np.nan_to_num(eachMales).sum(axis=1)[:]
     matrix.iloc[:,idx['homens']] = totalMales
 
-    totalFemales[totalFemales==0] = eachFemales.sum(axis=1)[totalFemales==0]
+    #totalFemales[totalFemales==0] = eachFemales.sum(axis=1)[totalFemales==0]
+    totalFemales[:] = np.nan_to_num(eachFemales).sum(axis=1)[:]
     matrix.iloc[:,idx['mulheres']] = totalFemales
     return matrix
 
@@ -42,7 +44,7 @@ def totalIndices(matrix,axis=0):
     elif axis==1:
         names = list(matrix.index)
     else:
-        raise ValueError("No support for axis>1")
+        raise ValueError("No support for axis > 1")
 
     for gender in ['homens', 'mulheres']:
         totalGender = [gender in x.lower() and 'total' in x.lower() for x in names]
@@ -65,7 +67,13 @@ def isDiscriminated(matrix):
     return (menEach>=0).sum(), (femaleEach>=0).sum() #zeros as counted as discriminated values
 
 def getDemo(demoData, field, proportion = None):
-    ''' Merges all companies data from a given field'''
+    ''' Merges all companies data from a given field.
+    Options for proportion are:
+    total: the sum of totalMales+totalFemales = 1
+    category: both males and female total each sum to one
+    gender: for each variable/specifics men and woman sum to one
+
+    '''
 
     clusteredData = pd.DataFrame(columns=['specifics','company','variable','value'])
     for empresai in demoData:

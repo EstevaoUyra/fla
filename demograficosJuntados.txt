@@ -1,0 +1,38 @@
+###########################
+A empresa é listada na BMFBovespa?
+Não    77
+Sim    11
+
+###########################
+Porte da empresa (com base no faturamento anual):
+A empresa não divulga faturamento     8
+Acima de R$ 3 bilhões                24
+Até R$ 500 milhões                   35
+De R$ 1 bilhão a R$ 3 bilhões        17
+De R$ 500 milhões a R$ 1 bilhão       4
+
+###########################
+Possui relatório:
+Anual                          14
+Anual e de sustentabilidade    27
+De sustentabilidade            16
+Não possui                     31
+
+###########################
+Nacionalidade da empresa:
+Multinacional    45
+Nacional         43
+
+###########################
+
+###########################
+
+###########################
+
+###########################
+
+###########################
+
+###########################
+
+###########################

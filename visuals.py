@@ -7,7 +7,7 @@ def stripDemog(demoData,field,proportion):
     '''Plot single chart with all data from the specified field'''
     fieldData = getDemo(demoData,field,proportion)
     fig = sns.stripplot(y='variable', x="value", hue="specifics",
-                  data=fieldData, dodge=True, jitter=True,
+                  data=fieldData, jitter=True,
                   alpha=.9, zorder=1)
     fig = plt.figure(1)
     plt.title(field)

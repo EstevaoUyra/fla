@@ -3,10 +3,10 @@ Notas questões
 Questões com múltiplas escolhas possíveis costumam seguir o seguinte padrão:
 
 PERGUNTA:
-a) alternativa positiva: +1 
-b) alternativa positiva: +1 
-c) alternativa positiva: +1 
-d) alternativa positiva: +1 
+a) alternativa positiva: +1
+b) alternativa positiva: +1
+c) alternativa positiva: +1
+d) alternativa positiva: +1
 e) outras opções: +1 OU 0
 f) negativa: false
 
@@ -31,3 +31,7 @@ tem duas negativas, checar consistência:
 8, 12, 20, 28, 32
 
 28: "meio ponto"
+
+--------------------------
+Grupo basf:
+cargoGeneroIdade: mulheres total, colocou 59, era claramente 859 (a soma)
